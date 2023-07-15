@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: gray;
+    margin: 0;
+   
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dashboard-button {
+    margin-right: 10px;
+  }
+  
+  .user-dropdown {
+    position: relative;
+  }
+  
+  .user-button {
+    margin-right: 10px;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 10;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-content button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
