@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import headerData from "../../data/header";
 import Button from "../button";
 import userData from "./userData";
 import "./style.css";
 
-const Header = () => {
+const Header = ({ headerData }) => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const filteredUser  = userData.filter(user => user.name === 'JohnDoe')[0];
-  
-
+  const filteredUser = headerData.userData.find(
+    (user) => user.name === "JohnDoe1"
+  );
 
   const handleDropdownToggle = () => {
     setShowDropdown(!showDropdown);
@@ -17,22 +18,33 @@ const Header = () => {
     // Handle logout functionality here
   };
 
+  const text = "Expense Tracker";
+
   return (
     <header className="header">
       <div className="logo">
-        <img src="/favicon.ico" alt="Logo" />
+        <img src="./favicon.ico" alt="Logo" />
+        <span className="logo-text">{text}</span>
       </div>
       <div className="header-right">
-        <Button className="dashboard-button" title="Dashboard" />
-        <div className="user-dropdown">
+        {headerData.headerButtons.map((button) => (
           <Button
-            className="user-button"
+            key={button.title}
+            className={button.className}
+            title={button.title}
+          />
+        ))}
+        <div className="user-dropdown">
+          <img
+            src={filteredUser ? filteredUser.imgSrc : ""}
+            alt="User Avatar"
+            className="user-avatar"
             onClick={handleDropdownToggle}
-            title={filteredUser.name}
           />
           {showDropdown && (
             <div className="dropdown-content">
-              <Button onClick={handleLogout} title="Logout"/>
+              {filteredUser.name}
+              <Button onClick={handleLogout} title="Logout" />
               {/* Add more dropdown items here */}
             </div>
           )}

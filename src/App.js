@@ -1,9 +1,10 @@
 import Header from "./components/header";
+import headerData from "./data/header";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Header></Header>
+      <Header headerData={headerData}></Header>
       </header>
     </div>
   );
