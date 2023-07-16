@@ -4,11 +4,12 @@ import { allRoutes } from "./all-routes";
 import './style.css';
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import headerData from "../../data/header";
 
 const BaseApp = ({element}) => {
   return(
     <>
-    <Header />
+    <Header headerData={headerData} />
     {element}
     <Footer />
     </>

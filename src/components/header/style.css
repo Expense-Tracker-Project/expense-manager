@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: gray;
+    margin: 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .previous-expense-button {
+    margin-right: 10px;
+    width: max-content;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  
+  
+  .user-button {
+    margin-right: 10px;
+  }
+  
+  .user-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    min-width: 150px;
+    z-index: 1;
+  }
+  
+  
+  .dropdown-content button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .user-avatar{
+    cursor: pointer;
+  }
+  
