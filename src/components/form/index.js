@@ -26,7 +26,7 @@ const Form = (props) => {
   };
 
   return (
-    <div className="form-component">
+    <div className={`form-component ${props.className}`}>
       <div className="form-elements">
         {props.items.map((item) =>
           item.type === "password" ? (

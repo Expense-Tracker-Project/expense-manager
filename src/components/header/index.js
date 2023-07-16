@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import headerData from "../../data/header";
 import Button from "../button";
-import userData from "./userData";
 import "./style.css";
 
 const Header = ({ headerData }) => {
