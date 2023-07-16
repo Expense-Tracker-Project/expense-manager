@@ -33,7 +33,7 @@ const Password = (props) => {
   };
 
   return (
-    <div>
+    <div className="password-component">
       <label>
         <span>Password</span>
         <div className="input-container">

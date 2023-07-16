@@ -6,8 +6,8 @@
   font-family: "Poppins";
   border: none;
   border-radius: 8px;
-  background: #90ee90;
-  color: #343434;
+  background: var(--blue);
+  color: var(--white);
   font-weight: 500;
   align-self: center;
 }

@@ -25,7 +25,7 @@
   height: 20px !important;
   width: 20px !important;
   padding-top: 1.5px !important;
-  fill: #ffbf00;
+  fill: var(--blue);
 }
 
 .password-component {

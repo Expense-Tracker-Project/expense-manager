@@ -7,7 +7,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: gray;
+    background-color: var(--mid-green);
     margin: 0;
   }
 
@@ -17,27 +17,29 @@ body {
   }
   
   .logo img {
-    height: 50px;
+    height: 60px;
     margin-right: 10px;
   }
 
   .logo-text {
-    font-size: 18px;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--blue);
   }
   
   .header-right {
     display: flex;
     align-items: center;
+    margin-right: 2rem;
   }
   
   .previous-expense-button {
-    margin-right: 10px;
+    margin-right: 8rem;
     width: max-content;
     padding-left: 10px;
     padding-right: 10px;
   }
-  
-  
   
   .user-button {
     margin-right: 10px;
@@ -51,13 +53,18 @@ body {
   .dropdown-content {
     position: absolute;
     top: 100%;
-    right: 0;
+    right: -30px;
     background-color: #fff;
-    padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     white-space: nowrap;
     min-width: 150px;
     z-index: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 10px;
   }
   
   
@@ -69,5 +76,6 @@ body {
 
   .user-avatar{
     cursor: pointer;
+    margin-right: 2rem;
   }
   

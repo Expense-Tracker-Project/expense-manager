@@ -32,7 +32,7 @@ const Form = (props) => {
           item.type === "password" ? (
             <div className="form-element">
               {" "}
-              <Password />{" "}
+              <Password isSignup={props.isSignup} passwordLabel={props.passwordLabel} />{" "}
             </div>
           ) : (
             <div className="form-element">
