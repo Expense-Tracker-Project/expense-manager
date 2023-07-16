@@ -7,7 +7,7 @@ import "./style.css";
 const Header = ({ headerData }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const filteredUser = headerData.userData.find(
-    (user) => user.name === "JohnDoe1"
+    (user) => user.name === "JaneSmith"
   );
 
   const handleDropdownToggle = () => {

@@ -4,12 +4,13 @@ const headerData = {
       name: "JohnDoe1",
       email: "johndoe@example.com",
       phone: "123",
-      imgSrc: "header/userIcon.png"
+      imgSrc: "header/userIcon.png",
     },
     {
       name: "JaneSmith",
       email: "janesmith@example.com",
       phone: "987-654-3210",
+      imgSrc: "header/userIcon.png",
     },
     // Add more user objects as needed
   ],
