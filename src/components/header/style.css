@@ -7,7 +7,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: var(--mid-green);
+    background-color: var(--gray);
     margin: 0;
   }
 
@@ -25,7 +25,7 @@ body {
     font-size: 32px;
     font-weight: 900;
     letter-spacing: 2px;
-    color: var(--blue);
+    color: var(--light-green);
   }
   
   .header-right {
@@ -54,7 +54,7 @@ body {
     position: absolute;
     top: 100%;
     right: -30px;
-    background-color: #fff;
+    background-color: var(--gray);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     white-space: nowrap;
     min-width: 150px;
@@ -65,13 +65,14 @@ body {
     flex-direction: column;
     gap: 8px;
     border-radius: 10px;
+    color: var(--white);
   }
-  
   
   .dropdown-content button {
     display: block;
     width: 100%;
     margin-bottom: 10px;
+
   }
 
   .user-avatar{

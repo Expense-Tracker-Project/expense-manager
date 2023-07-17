@@ -5,15 +5,15 @@
 }
 
 :root{
-    --black: #343434;
-    --white: #EDF5E1;
+    --black: #1A1A1B;
+    --white: #EEEEEE;
+    --gray: #333F44;
     --blue: #05386B;
-    --dark-green: #379683;
-    --mid-green: #5CDB95;
-    --light-green: #8EE4AF;
+    --green: #37AA9C;
+    --light-green: #94F3E4;
 }
 
 body {
     font-family: 'Poppins';
-    background-color: var(--mid-green);
+    background-color: var(--black);
 }
