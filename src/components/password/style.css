@@ -1,0 +1,35 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-container input {
+  padding-right: 30px;
+}
+
+.input-container input:focus {
+  outline: none;
+}
+
+.eye-icon-container {
+  position: relative;
+  right: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+}
+
+.eye-icon-container svg {
+  height: 20px !important;
+  width: 20px !important;
+  padding-top: 1.5px !important;
+  fill: var(--gray);
+}
+
+.password-component {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

@@ -1,0 +1,7 @@
+.error-page {
+    height: calc(100vh - 52px - 62px);
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,0 +1,43 @@
+.form-component {
+  display: flex;
+  max-width: 600px;
+  margin: auto;
+  justify-content: center;
+  font-family: "Poppins";
+}
+.form-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-element label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.form-element label span {
+  width: max-content;
+  margin-left: 22px;
+  margin-bottom: -18px;
+  background-color: var(--black);
+  font-size: 18px;
+  color: var(--light-green);
+  z-index: +1;
+  padding: 0 6px;
+}
+.form-element label input {
+  border: 1px solid var(--light-green);
+  border-radius: 8px;
+  background-color: transparent;
+  width: 20rem;
+  padding: 15px 12px;
+  font-size: 16px;
+  color: var(--white);
+}
+.form-element label input:focus {
+  outline: none;
+}
+
+.form-elements button {
+  margin-top: 15px;
+}

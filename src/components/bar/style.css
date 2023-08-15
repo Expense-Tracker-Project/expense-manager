@@ -1,0 +1,62 @@
+.bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.custom-bar {
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 0;
+    min-height: 5px;
+}
+
+.bar-0, .bar-2, .bar-4, .bar-6, .bar-8, .bar-10 {
+    background: #769B99;
+}
+
+.bar-0 .bar-title, .bar-2 .bar-title, .bar-4 .bar-title, .bar-6 .bar-title, .bar-8 .bar-title, .bar-10 .bar-title {
+    color: #9B5151;
+}
+
+.bar-1, .bar-3, .bar-5, .bar-7, .bar-9, .bar-11 {
+    background: #58605F;
+}
+
+.bar-1 .bar-title, .bar-3 .bar-title, .bar-5 .bar-title, .bar-7 .bar-title, .bar-9 .bar-title, .bar-11 .bar-title {
+    color: #FFEDED;
+}
+
+.bar-wrapper .custom-bar .bar-title {
+    transform: rotate(-90deg);
+    font-size: 10px;
+    font-weight: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bar-label {
+    transform: rotate(-90deg);
+    color: #7D2424;
+    position: relative;
+    font-size: 10px;
+    font-weight: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    height: 0;
+    width: max-content;
+    z-index: 100;
+    margin-left: 5px;
+}
+
+.bar-wrapper .custom-bar:hover .bar-title {
+    opacity: 1;
+}
+
+.bar-wrapper:hover .bar-label {
+    opacity: 1;
+}
+
