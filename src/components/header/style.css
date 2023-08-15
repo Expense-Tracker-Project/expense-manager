@@ -37,7 +37,9 @@ gap: 20px;
   }
   
   .user-dropdown {
-    position: relative;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
     display: inline-block;
   }
   

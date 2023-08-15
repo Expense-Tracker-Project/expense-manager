@@ -16,7 +16,7 @@ const Header = ({ headerData }) => {
     // Handle logout functionality here
   };
 
-  const text = "Hi 👋, Mohd. Faique!";
+  const text = `Hi 👋, ${filteredUser.name}!`;
 
   return (
     <header className="header">
