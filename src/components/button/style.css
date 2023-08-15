@@ -10,3 +10,11 @@
   align-self: center;
   font-family: 'Mochiy Pop One';
 }
+
+@media screen and (max-width: 500px) {
+  .custom-button {
+    width: 10rem;
+    padding: 6px;
+    font-size: 12px;
+  }
+}

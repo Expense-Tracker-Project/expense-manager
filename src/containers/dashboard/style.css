@@ -1,0 +1,19 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.piggi-image {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+    transform: rotate(20deg);
+}
+
+@media screen and (max-width: 920px) {
+    .piggi-image {
+        display: none;
+    }
+  }
