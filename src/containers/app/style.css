@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
 *{
     margin: 0; padding: 0; box-sizing: border-box;
@@ -11,9 +12,12 @@
     --blue: #05386B;
     --green: #37AA9C;
     --light-green: #94F3E4;
+    --light-pink: #F98D8D;
 }
 
 body {
-    font-family: 'Poppins';
-    background-color: var(--black);
+    font-family: 'Mochiy Pop One';
+    max-width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(178, 48, 48, 0.00) 0.28%, #3C2525 100%);
 }

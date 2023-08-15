@@ -16,15 +16,15 @@ const Header = ({ headerData }) => {
     // Handle logout functionality here
   };
 
-  const text = "Expense Tracker";
+  const text = "Hi 👋, Mohd. Faique!";
 
   return (
     <header className="header">
       <div className="logo">
-        <img src="./favicon.ico" alt="Logo" />
         <span className="logo-text">{text}</span>
       </div>
       <div className="header-right">
+        <div className="header-buttons-group">
         {headerData.headerButtons.map((button) => (
           <Button
             key={button.title}
@@ -32,6 +32,7 @@ const Header = ({ headerData }) => {
             title={button.title}
           />
         ))}
+        </div>
         <div className="user-dropdown">
           <img
             src={filteredUser ? filteredUser.imgSrc : ""}

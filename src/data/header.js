@@ -19,6 +19,10 @@ const headerData = {
       title: "Previous Expenses",
       className: "previous-expense-button",
     },
+    {
+      title: "Add New Expense",
+      className: "add-expense-button",
+    },
   ],
 };
 

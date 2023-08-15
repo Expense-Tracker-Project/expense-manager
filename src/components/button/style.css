@@ -1,13 +1,12 @@
 .custom-button {
   cursor: pointer;
-  width: 10rem;
+  width: 12rem;
   padding: 10px 8px;
-  font-size: 16px;
-  font-family: "Poppins";
   border: none;
-  border-radius: 8px;
-  background: var(--green);
-  color: var(--blue);
-  font-weight: 500;
+  border-radius: 50px;
+  background: var(--light-pink);
+  color: var(--black);
+  font-size: 14px;
   align-self: center;
+  font-family: 'Mochiy Pop One';
 }
