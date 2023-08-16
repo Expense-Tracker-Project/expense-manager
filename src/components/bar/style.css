@@ -18,7 +18,7 @@
 }
 
 .bar-0 .bar-title, .bar-2 .bar-title, .bar-4 .bar-title, .bar-6 .bar-title, .bar-8 .bar-title, .bar-10 .bar-title {
-    color: #9B5151;
+    color: var(--mid-pink);
 }
 
 .bar-1, .bar-3, .bar-5, .bar-7, .bar-9, .bar-11 {

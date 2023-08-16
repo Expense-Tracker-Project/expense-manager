@@ -1,0 +1,98 @@
+.signup-wrapper {
+    position: absolute;
+    top: 0;
+    height: 100vh !important;
+    width: 100vw !important;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+}
+
+.signup-wrapper img {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    bottom: 2rem;
+    transform: rotate(20deg);
+    left: 1rem;
+}
+
+@media screen and (max-width: 740px){
+    .signup-wrapper img {
+        display: none;
+    }
+}
+
+.form-component {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    justify-content: center;
+    font-family: "Poppins";
+  }
+  .form-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-element label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .form-element label span {
+    width: max-content;
+    margin-left: 22px;
+    margin-bottom: -18px;
+    background-color: var(--black);
+    font-size: 18px;
+    color: var(--mid-pink);
+    z-index: +1;
+    padding: 0 6px;
+  }
+  .form-element label input {
+    border: 1px solid var(--mid-pink);
+    border-radius: 8px;
+    background-color: transparent;
+    width: 20rem;
+    padding: 15px 12px;
+    font-size: 16px;
+    color: var(--white);
+  }
+  .form-element label input:focus {
+    outline: none;
+  }
+  
+  .form-elements button {
+    margin-top: 15px;
+  }
+
+  .bottom-text {
+    color: var(--light-green);
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .signup-link {
+    text-decoration: none;
+    color: var(--light-green);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 350px){
+    .form-element {
+      width: 100vw;
+    }
+    .form-element label span {
+      font-size: 14px;
+    }
+    .form-input-container {
+      width: 100vw;
+    }
+    .form-element label input {
+      width: 100vw;
+      font-size: 14px;
+    }
+  }

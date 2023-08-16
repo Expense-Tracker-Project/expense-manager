@@ -15,7 +15,7 @@ const Form = (props) => {
     const hasInvalidCharacters = regex && !regex.test(value);
     const hasExceededMaxLength = maxLength && value.length === maxLength;
     const hasInvalidSpace =
-      /\s\s/.test(value) || (value.length === 1 && value === " "); // restrict multiple spaces and space in beginning
+      /\s\s/.test(value) || (value.length === 1 && value === " ");
 
     if (!hasInvalidCharacters && !hasExceededMaxLength && !hasInvalidSpace) {
       setInput((prevInput) => ({
