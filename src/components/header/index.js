@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Button from "../button";
 import "./style.css";
 import ExpenditureForm from "../AddNewExpnsPopUp";
+import { Link } from "react-router-dom";
 
-const Header = ({ headerData }) => {
+const Header = (props) => {
+  const { headerData } = props;
   const [showDropdown, setShowDropdown] = useState(false);
 
   const [showFormPopup, setShowFormPopup] = useState(false); // Add state for form popup visibility
@@ -28,7 +30,7 @@ const Header = ({ headerData }) => {
     setShowFormPopup(false);
   };
 
-  const text = `Hi 👋, ${filteredUser.name}!`;
+  const text = `Hi 👋, ${props.user}!`;
 
   return (
     <header className="header">
@@ -55,8 +57,8 @@ const Header = ({ headerData }) => {
           />
           {showDropdown && (
             <div className="dropdown-content">
-              {filteredUser.name}
-              <Button onClick={handleLogout} title="Logout" />
+              {props.user}
+              <Link to="/login" className="custom-button logout-btn">Logout</Link>
               {/* Add more dropdown items here */}
             </div>
           )}

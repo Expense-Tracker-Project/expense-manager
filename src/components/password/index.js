@@ -9,6 +9,7 @@ const Password = (props) => {
   const [passwordError, setPasswordError] = useState(false);
 
   const handlePasswordChange = (event) => {
+    props.setPassword(event.target.value);
     setPassword(event.target.value);
     setPasswordError(false);
   };

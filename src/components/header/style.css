@@ -76,10 +76,11 @@ body {
   color: var(--white);
 }
 
-.dropdown-content button {
+.dropdown-content .logout-btn {
   display: block;
   width: 100%;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .user-avatar {

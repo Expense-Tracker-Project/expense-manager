@@ -59,7 +59,7 @@
   .expense-table .date,  .expense-table .reason{
     background-color: #769B99;
     border-spacing: 0;
-    color: #9B5151;
+    color: var(--mid-pink);
   }
   
   .expense-table .amount{

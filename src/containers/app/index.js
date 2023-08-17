@@ -6,15 +6,6 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import headerData from "../../data/header";
 
-const BaseApp = ({element}) => {
-  return(
-    <>
-    <Header headerData={headerData} />
-    {element}
-    <Footer />
-    </>
-  )
-}
 const App = () => {
   return (
     <BrowserRouter>
@@ -25,7 +16,7 @@ const App = () => {
           key={route.path}
           exact
           path={route.path}
-          element={<BaseApp element={route.element} />}
+          element={route.element}
         />
       ))
     }

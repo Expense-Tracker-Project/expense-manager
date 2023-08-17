@@ -33,3 +33,15 @@
   flex-direction: column;
   gap: 8px;
 }
+
+@media screen and (max-width: 350px) {
+  .input-container {
+    width: 100vw;
+  }
+  .password-component {
+    width: 100vw;
+  }
+  .input-container input {
+    width: 100vw;
+  }
+}
