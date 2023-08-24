@@ -69,7 +69,6 @@ const Header = (props) => {
           <ExpenditureForm onClose={handleCloseFormPopup} />
         </div>
       )}{" "}
-      {/* Render the form popup conditionally */}
     </header>
   );
 };

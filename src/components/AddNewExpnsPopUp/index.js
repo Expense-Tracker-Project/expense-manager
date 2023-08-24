@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./style.css";
+import Button from "../button";
 
-const ExpenditureForm = ({onClose}) => {
+
+const ExpenditureForm = ({ onClose }) => {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
   const [reason, setReason] = useState("");
@@ -32,13 +34,14 @@ const ExpenditureForm = ({onClose}) => {
   return (
     <div className="popup">
       <button className="close-button" onClick={onClose}>
-      ❌
+        ❌
       </button>
-      <h2>Expenditure Form</h2>
+      <h2>Add Expense</h2>
       <form onSubmit={handleSubmit} className="expenditure-form">
         <div className="form-group">
           <label htmlFor="amount">Amount:</label>
           <input
+            className="expenseAmount"
             type="number"
             id="amount"
             value={amount}
@@ -48,6 +51,7 @@ const ExpenditureForm = ({onClose}) => {
         <div className="form-group">
           <label htmlFor="date">Date:</label>
           <input
+            className="expenseDate"
             type="date"
             id="date"
             value={date}
@@ -57,16 +61,15 @@ const ExpenditureForm = ({onClose}) => {
         <div className="form-group">
           <label htmlFor="reason">Reason:</label>
           <textarea
-          className="form-textArea"
+            className="form-textArea"
             id="reason"
             value={reason}
             onChange={handleReasonChange}
             rows={4} // Adjust the number of rows as needed
           />
         </div>
-        <button className="form-button" type="submit">
-          Submit
-        </button>
+        <Button className="form-button" type="submit"
+        title="Submit"/>
       </form>
     </div>
   );

@@ -22,7 +22,7 @@ app.post("/login", async(req, res) => {
             if (password !== checkEmail.password) {
                 res.json("incorrect password");
             }
-            res.json(checkEmail);
+            else res.json(checkEmail);
         } else {
             res.json("not exist");
         }
