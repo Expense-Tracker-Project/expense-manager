@@ -1,23 +1,22 @@
-/* .form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  } */
 
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  /* background-color: white; */
+  background: linear-gradient(180deg, rgba(178, 48, 48, 0.00) 0.28%, #6b2e2e 100%);
   border: 1px solid #ccc;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   border-radius: 25px;
+  animation: dropTop 0.3s ease-out;
+}
+
+.popup h2{
+  font-size: medium;
+  padding-bottom: 15px;
 }
 
 .close-button {
@@ -28,6 +27,16 @@
   border: none;
   font-size: 16px;
   cursor: pointer;
+}
+
+.expenseDate{
+  margin-left: 30px;
+  outline: none;
+}
+
+.expenseAmount{
+  margin-left: 5px;
+  outline: none;
 }
 
 .expenditure-form {
@@ -55,17 +64,31 @@ label {
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: vertical; /* Allow vertical resizing of the textarea */
+  margin-top: 5px;
+  outline: none;
 }
 
-.form-button {
+
+/* .form-button {
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 .form-button:hover {
   background-color: #0056b3;
+}
+
+@keyframes dropTop {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
