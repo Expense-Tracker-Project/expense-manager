@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./style.css";
+import axios from "axios";
 
-const ExpenditureForm = ({onClose}) => {
+const ExpenditureForm = ({onClose, email}) => {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
   const [reason, setReason] = useState("");
@@ -18,17 +19,26 @@ const ExpenditureForm = ({onClose}) => {
     setReason(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = async(e) => {
+    e.preventDefault();
 
-    // You can perform further actions here, such as sending the data to a backend server
-
-    // Reset the form fields
-    setAmount("");
-    setDate("");
-    setReason("");
-  };
-
+    try {
+      await axios.post("http://localhost:8000/", {
+        email, date, reason, amount
+      })
+      .then(res => {
+        if (res.data === "data added") {
+          alert("New expense added");
+        }
+      })
+      .catch(e => {
+        alert("Something went wrong");
+        console.log(e);
+      })
+    } catch (e) {
+      console.log(e);
+    }
+  }
   return (
     <div className="popup">
       <button className="close-button" onClick={onClose}>

@@ -66,7 +66,7 @@ const Header = (props) => {
       </div>
       {showFormPopup && (
         <div className="popup-overlay">
-          <ExpenditureForm onClose={handleCloseFormPopup} />
+          <ExpenditureForm onClose={handleCloseFormPopup} email={props.user} />
         </div>
       )}{" "}
       {/* Render the form popup conditionally */}

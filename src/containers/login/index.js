@@ -56,7 +56,6 @@ const Login = (props) => {
         <div className="bottom-text">Doesn't have account? <Link to='/signup' className="signup-link">Signup</Link></div>
       </div>
       </form>
-      <img src="./piggi.png" />
     </div>
   );
 };

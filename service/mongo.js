@@ -22,7 +22,7 @@ const newSchemaUser = new mongoose.Schema({
     password:{
         type:String,
         required:true
-    },
+    }
 })
 
 const newSchemaExpenses = new mongoose.Schema({
