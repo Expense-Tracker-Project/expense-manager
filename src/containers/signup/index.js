@@ -1,7 +1,6 @@
 import "./style.css";
 import Password from "../../components/password";
 import { useState } from "react";
-import Button from "../../components/button";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -64,7 +63,6 @@ const Signup = (props) => {
         </form>
         <div className="bottom-text">Already have account? <Link to='/login' className="signup-link">Sign in</Link></div>
       </div>
-      <img src="./piggi.png" />
     </div>
   );
 };
