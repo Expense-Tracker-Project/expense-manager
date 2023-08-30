@@ -25,7 +25,7 @@ return (
     <Header headerData={headerData} user={location?.state?.id} />
     <Graph data={graphData} />
     <Table data={tableData} />
-    <img src="./piggi.png" className="piggi-image" />
+    <img src="./piggi.png" className="piggi-image" alt="logo" />
     </div>
 )
 }

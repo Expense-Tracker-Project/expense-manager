@@ -1,7 +1,6 @@
 import "./style.css";
 import Password from "../../components/password";
 import { useState } from "react";
-import Button from "../../components/button";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 

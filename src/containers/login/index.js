@@ -2,7 +2,6 @@ import "../signup/style.css";
 import Password from "../../components/password";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../../components/button";
 import axios from "axios";
 
 const Login = (props) => {

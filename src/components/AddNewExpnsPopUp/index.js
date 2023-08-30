@@ -23,22 +23,26 @@ const ExpenditureForm = ({onClose, email}) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-
-    try {
-      await axios.post("http://localhost:8000/", {
-        email, date, reason, amount
-      })
-      .then(res => {
-        if (res.data === "data added") {
-          alert("New expense added");
-        }
-      })
-      .catch(e => {
-        alert("Something went wrong");
+    if(amount.trim() === "" || date.trim() === "" || reason.trim() === "" ) {
+      alert("Incomplete form");
+    } else {
+      onClose();
+      try {
+        await axios.post("http://localhost:8000/", {
+          email, date, reason, amount
+        })
+        .then(res => {
+          if (res.data === "data added") {
+            alert("New expense added");
+          }
+        })
+        .catch(e => {
+          alert("Something went wrong");
+          console.log(e);
+        })
+      } catch (e) {
         console.log(e);
-      })
-    } catch (e) {
-      console.log(e);
+      }
     }
   }
   return (
@@ -46,7 +50,7 @@ const ExpenditureForm = ({onClose, email}) => {
       <button className="close-button" onClick={onClose}>
         ❌
       </button>
-      <h2>Add Expense</h2>
+      <div className="title">Add Expense</div>
       <form onSubmit={handleSubmit} className="expenditure-form">
         <div className="form-group">
           <label htmlFor="amount">Amount:</label>
