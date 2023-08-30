@@ -30,7 +30,7 @@ const Header = (props) => {
     setShowFormPopup(false);
   };
 
-  const text = `Hi 👋, ${props.user}!`;
+  const text = `Hi 👋, ${props.name}!`;
 
   return (
     <header className="header">
@@ -41,11 +41,12 @@ const Header = (props) => {
         <div className="header-buttons-group">
           {headerData.headerButtons.map((button) => (
             <Button
+              
               key={button.title}
               className={button.className}
               title={button.title}
-              onClick={handleFormPopupToggle}
-            />
+              onClick={button.className === 'add-expense-button' ? handleFormPopupToggle : undefined}
+              />
           ))}
         </div>
         <div className="user-dropdown">
@@ -66,7 +67,7 @@ const Header = (props) => {
       </div>
       {showFormPopup && (
         <div className="popup-overlay">
-          <ExpenditureForm onClose={handleCloseFormPopup} />
+          <ExpenditureForm email={props.id} onClose={handleCloseFormPopup} />
         </div>
       )}{" "}
     </header>

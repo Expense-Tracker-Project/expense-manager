@@ -21,7 +21,7 @@ const Login = (props) => {
           if (res.data === "incorrect password") {
             alert("Incorrect password");
           } else if (res.data !== "not exist") {
-            navigate("/", {state: {id: res.data.name}});
+            navigate("/", {state: {name: res.data.name,id:res.data.email}});
           } else if (res.data === "not exist") {
             alert("user has not signed up");
           }

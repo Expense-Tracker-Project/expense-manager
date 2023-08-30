@@ -3,7 +3,7 @@ import "./style.css";
 import Button from "../button";
 
 
-const ExpenditureForm = ({ onClose }) => {
+const ExpenditureForm = ({ onClose,email }) => {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
   const [reason, setReason] = useState("");
@@ -20,16 +20,54 @@ const ExpenditureForm = ({ onClose }) => {
     setReason(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   // You can perform further actions here, such as sending the data to a backend server
+
+  //   // Reset the form fields
+  //   setAmount("");
+  //   setDate("");
+  //   setReason("");
+  // };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // You can perform further actions here, such as sending the data to a backend server
-
-    // Reset the form fields
-    setAmount("");
-    setDate("");
-    setReason("");
+  
+    try {
+      const userEmail = email; 
+  
+      const expenseData = {
+        email: userEmail,
+        date,
+        reason,
+        amount: parseFloat(amount), 
+      };
+  
+      const response = await fetch("http://localhost:8000/api/submit-expense", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(expenseData),
+      });
+  
+      if (response.ok) {
+        console.log("Expense saved successfully");
+        setAmount("");
+        setDate("");
+        setReason("");
+        onClose(); 
+      } else {
+        console.error("Error saving expense");
+      }
+    } catch (error) {
+      console.error("Error saving expense:", error);
+    }
   };
+  
+  
+  
 
   return (
     <div className="popup">

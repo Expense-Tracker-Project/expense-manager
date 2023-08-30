@@ -22,7 +22,7 @@ const Signup = (props) => {
           if (res.data === "exist") {
             alert("user already exists");
           } else if (res.data === "not exist") {
-            navigate("/", {state: {id: name}});
+            navigate("/", {state: {id: email,name}});
           }
         })
         .catch(e => {

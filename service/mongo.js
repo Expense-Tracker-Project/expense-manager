@@ -23,6 +23,23 @@ const newSchemaUser = new mongoose.Schema({
         type:String,
         required:true
     },
+    expenses: {
+        type: [{
+            date: {
+                type: String,
+                required: true
+            },
+            reason: {
+                type: String,
+                required: true
+            },
+            amount: {
+                type: Number,
+                required: true
+            }
+        }],
+        default: []
+    }
 })
 
 const newSchemaExpenses = new mongoose.Schema({

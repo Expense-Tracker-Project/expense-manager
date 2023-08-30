@@ -9,9 +9,10 @@ import { useLocation } from "react-router-dom";
 
 const Dashboard = ( props ) => {
     const location = useLocation();
+    console.log(location.state);
 return (
     <div className="dashboard-container">
-    <Header headerData={headerData} user={location?.state?.id} />
+    <Header headerData={headerData} id={location?.state?.id} name={location?.state?.name} />
     <Graph data={graphData} />
     <Table data={tableData} />
     <img src="./piggi.png" className="piggi-image" />
