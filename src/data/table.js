@@ -1,59 +1,21 @@
-const tableData = [
-    {
-        date: '01-08-2023',
-        amount: 300,
-        reason: 'Snacks - Noodles'
-    },
-    {
-        date: '04-08-2023',
-        amount: 100,
-        reason: 'Travel - Metro recharge'
-    },
-    {
-        date: '05-08-2023',
-        amount: 150,
-        reason: 'Snacks - Momos'
-    },
-    {
-        date: '07-08-2023',
-        amount: 20,
-        reason: 'Stationary - Pens'
-    },
-    {
-        date: '07-08-2023',
-        amount: 20,
-        reason: 'Stationary - Pens'
-    },
-    {
-        date: '07-08-2023',
-        amount: 20,
-        reason: 'Stationary - Pens'
-    },
-    {
-        date: '07-08-2023',
-        amount: 20,
-        reason: 'Stationary - Pens'
-    },
-    {
-        date: '07-08-2023',
-        amount: 20,
-        reason: 'Stationary - Pens'
-    },
-    {
-        date: '07-08-2023',
-        amount: 20,
-        reason: 'Stationary - Pens'
-    },
-    {
-        date: '07-08-2023',
-        amount: 20,
-        reason: 'Stationary - Pens'
-    },
-    {
-        date: '07-08-2023',
-        amount: 20,
-        reason: 'Stationary - Pens'
-    },
-]
+export const mapTableData = (data = []) => {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
 
-export default tableData
+    const filteredData = data.filter(expense => {
+        const expenseDate = new Date(expense.date);
+        return expenseDate.getFullYear() === currentYear && expenseDate.getMonth() === currentMonth;
+    });
+
+    filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    return (
+        {
+            tableData: filteredData?.map?.(expense => ({
+                date: expense.date,
+                amount: expense.amount,
+                reason: expense.reason
+            }))
+        }
+    )
+}
