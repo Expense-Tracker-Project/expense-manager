@@ -2,9 +2,9 @@ import "./style.css";
 import Password from "../../components/password";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import SignupService from "../../service/signup";
 
-const Signup = (props) => {
+const Signup = () => {
   const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -12,27 +12,8 @@ const Signup = (props) => {
 
     const handleSubmit = async(e) => {
       e.preventDefault();
-
-      try {
-        await axios.post("http://localhost:8000/signup", {
-          email, password, name
-        })
-        .then(res => {
-          if (res.data === "exist") {
-            alert("user already exists");
-          } else if (res.data === "not exist") {
-            navigate("/", {state: {id: email,name}});
-          }
-        })
-        .catch(e => {
-          alert("Wrong details");
-          console.log(e);
-        })
-      } catch (e) {
-        console.log(e);
-      }
+      await SignupService(email, password, name, navigate);
     }
-
 
   return (
     <div className="signup-wrapper">

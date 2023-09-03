@@ -2,36 +2,16 @@ import "../signup/style.css";
 import Password from "../../components/password";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import LoginService from "../../service/login";
 
-const Login = (props) => {
+const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = async(e) => {
       e.preventDefault();
-
-      try {
-        await axios.post("http://localhost:8000/login", {
-          email, password
-        })
-        .then(res => {
-          if (res.data === "incorrect password") {
-            alert("Incorrect password");
-          } else if (res.data !== "not exist") {
-            navigate("/", {state: {name: res.data.name,id:res.data.email}});
-          } else if (res.data === "not exist") {
-            alert("user has not signed up");
-          }
-        })
-        .catch(e => {
-          alert("Wrong details");
-          console.log(e);
-        })
-      } catch (e) {
-        console.log(e);
-      }
+      await LoginService(email, password, navigate);
     }
 
   return (
