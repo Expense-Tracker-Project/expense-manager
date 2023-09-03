@@ -4,7 +4,6 @@ const Table = ( props ) => {
     const { data } = props;
 return (
  <div className='table-container'>
-        <div className='table-title'>This Month's Expenses 💸</div>
 {        data?.tableData?.length === 0 ?
    <div className='empty-table'>
     <span>No expense added 🤑</span>

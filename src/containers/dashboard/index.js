@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { mapTableData } from "../../data/table";
 import mapGraphData from "../../data/graph";
+import Button from "../../components/button";
 
 const Dashboard = ( props ) => {
     const location = useLocation();
@@ -38,9 +39,17 @@ const Dashboard = ( props ) => {
 return (
     <div className="dashboard-container">
     <Header headerData={headerData} id={location?.state?.id} name={location?.state?.name} />
-    <Graph data={graphData} />
-    <Table data={expenses} />
     <img src="./piggi.png" className="piggi-image" alt="logo" />
+    <div className="lower-container">
+    <div className="expense-group">
+    <div className='table-title'>This Month's Expenses 💸</div>
+    <Button title="Click Here" className="check-expense-btn" />
+    </div>
+    <div className="expense-group">
+    <div className='table-title'>This Years's Expenses 💸</div>
+    <Button title="Click Here" className="check-expense-btn" />
+    </div>
+    </div>
     </div>
 )
 }
