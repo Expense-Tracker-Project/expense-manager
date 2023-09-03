@@ -1,51 +1,104 @@
+// const graphData = [
+//     {
+//         month: 'JAN',
+//         expense: '5100'
+//     },
+//     {
+//         month: 'FEB',
+//         expense: '2800'
+//     },
+//     {
+//         month: 'MAR',
+//         expense: '3000'
+//     },
+//     {
+//         month: 'APR',
+//         expense: '1800'
+//     },
+//     {
+//         month: 'MAY',
+//         expense: '2005'
+//     },
+//     {
+//         month: 'JUN',
+//         expense: '2900'
+//     },
+//     {
+//         month: 'JUL',
+//         expense: '3050'
+//     },
+//     {
+//         month: 'AUG',
+//         expense: '1900'
+//     },
+//     {
+//         month: '',
+//         expense: ''
+//     },
+//     {
+//         month: '',
+//         expense: ''
+//     },
+//     {
+//         month: '',
+//         expense: ''
+//     },
+//     {
+//         month: '',
+//         expense: ''
+//     },
+// ]
+
+// export default graphData;
+
 const graphData = [
     {
         month: 'JAN',
-        expense: '5100'
+        expense: 0
     },
     {
         month: 'FEB',
-        expense: '2800'
+        expense: 0
     },
     {
         month: 'MAR',
-        expense: '3000'
+        expense: 0
     },
     {
         month: 'APR',
-        expense: '1800'
+        expense: 0
     },
     {
         month: 'MAY',
-        expense: '2005'
+        expense: 0
     },
     {
         month: 'JUN',
-        expense: '2900'
+        expense: 0
     },
     {
         month: 'JUL',
-        expense: '3050'
+        expense: 0
     },
     {
         month: 'AUG',
-        expense: '1900'
+        expense: 0
     },
     {
         month: '',
-        expense: ''
+        expense: 0
     },
     {
         month: '',
-        expense: ''
+        expense: 0
     },
     {
         month: '',
-        expense: ''
+        expense: 0
     },
     {
         month: '',
-        expense: ''
+        expense: 0
     },
 ]
 
