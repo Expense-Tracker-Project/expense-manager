@@ -3,12 +3,78 @@
     flex-direction: column;
 }
 
+.middle-container{
+    top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 48vh;
+    position: absolute;
+    /* border: 2px solid black; */
+}
+
+.middle-container-left{
+    height: 48vh;
+    position: relative;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.middle-container-left > div {
+    flex: 1; 
+    text-align: left; 
+    padding: 1rem 2.5rem; 
+}
+
+.welcome-text {
+    text-align: center; 
+    width: 100%;
+    color:  #B49F35;
+    font-size: 24px;
+  } 
+  .first-line {
+    white-space: nowrap; 
+  } 
+  .second-line {
+    text-indent: 10rem; 
+  }
+  
+  .middle-container-left-div2 h3{
+    color: #847219;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .middle-container-left-div2 p{
+    font-size: 18px;
+    font-weight: 200;
+    color: #891D1D;
+  }
+
+  .middle-container-left-div3 p{
+    color: #584604;
+  }
+  .middle-container-left-div3 span{
+    color: #5E1313;
+  }
+
+  
+
+.middle-container-right{
+    height: 48vh;
+    position: relative;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
 .piggi-image {
     height: 180px;
     width: 180px;
-    position: fixed;
-    top: 150px;
-    right: 6rem;
     transform: rotate(10deg);
 }
 
@@ -22,6 +88,7 @@
 .lower-container {
     width: 100vw;
     height: 40vh;
+    min-height: 10vh;
     position: absolute;
     bottom: 0;
     display: flex;
