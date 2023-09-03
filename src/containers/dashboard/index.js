@@ -1,6 +1,5 @@
 import Graph from "../../components/graph";
 import Table from "../../components/table";
-import graphData from "../../data/graph";
 import './style.css';
 import headerData from "../../data/header";
 import Header from "../../components/header";
@@ -9,12 +8,14 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { mapTableData } from "../../data/table";
+import mapGraphData from "../../data/graph";
 
 const Dashboard = ( props ) => {
     const location = useLocation();
     const navigate = useNavigate();
 
     const [expenses, setExpenses] = useState(mapTableData([]));
+    const [graphData, setGraphData] = useState(mapGraphData([]));
 
     useEffect(() => {
         if(location?.state?.id === undefined) {
@@ -25,6 +26,7 @@ const Dashboard = ( props ) => {
                 .then((response) => {
                     if (response.data.expenses) {
                         setExpenses(mapTableData(response.data.expenses));
+                        setGraphData(mapGraphData(response.data.expenses))
                     }
                 })
                 .catch((error) => {

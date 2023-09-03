@@ -1,5 +1,5 @@
-export const mapTableData = (data = []) => {
-    const currentDate = new Date();
+export const mapTableData = (data = [], date) => {
+    const currentDate = date ?? new Date();
     const currentYear = currentDate.getFullYear();
     const currentMonth = currentDate.getMonth();
 
