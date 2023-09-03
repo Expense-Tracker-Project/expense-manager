@@ -48,7 +48,7 @@ const Dashboard = () => {
           </div>
           <div className="middle-container-left-div3">
             <p>
-              click on <span>Add New Expense </span>button to start tracking your expenses now.
+              Click on <span>Add New Expense </span>button to start tracking your expenses now.
             </p>
           </div>
         </div>
