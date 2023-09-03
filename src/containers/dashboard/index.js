@@ -10,21 +10,38 @@ import { mapTableData } from "../../data/table";
 import mapGraphData from "../../data/graph";
 import Button from "../../components/button";
 import GetExpenseService from "../../service/getExpense";
+import Popup from "../../components/CommonPopUp";
 
 const Dashboard = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [expenses, setExpenses] = useState(mapTableData([]));
   const [graphData, setGraphData] = useState(mapGraphData([]));
 
-    useEffect(() => {
-        if(location?.state?.id === undefined) {
-            navigate("/login");
-        } else {
-            GetExpenseService(setExpenses, setGraphData, mapTableData, mapGraphData, location);
-        }
-    }, [location, location?.state?.id, navigate]);
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  const openPopup = () => {
+    setPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setPopupVisible(false);
+  };
+
+  useEffect(() => {
+    if (location?.state?.id === undefined) {
+      navigate("/login");
+    } else {
+      GetExpenseService(
+        setExpenses,
+        setGraphData,
+        mapTableData,
+        mapGraphData,
+        location
+      );
+    }
+  }, [location, location?.state?.id, navigate]);
 
   return (
     <div className="dashboard-container">
@@ -35,20 +52,22 @@ const Dashboard = () => {
       />
       <div className="middle-container">
         <div className="middle-container-left">
-          <div class="welcome-text">
-            <div class="first-line">Welcome to ExpenseTrackr -</div>
-            <div class="second-line">Your Daily Expense Companion</div>
+          <div className="welcome-text">
+            <div className="first-line">Welcome to ExpenseTrackr -</div>
+            <div className="second-line">Your Daily Expense Companion</div>
           </div>
           <div className="middle-container-left-div2">
             <h3>Track Every Penny, Every Day</h3>
             <p>
               ExpenseTracker is your one-stop solution for effortlessly
-              monitoring <br/>your daily expenses.
+              monitoring <br />
+              your daily expenses.
             </p>
           </div>
           <div className="middle-container-left-div3">
             <p>
-              Click on <span>Add New Expense </span>button to start tracking your expenses now.
+              Click on <span>Add New Expense </span>button to start tracking
+              your expenses now.
             </p>
           </div>
         </div>
@@ -61,11 +80,21 @@ const Dashboard = () => {
       <div className="lower-container">
         <div className="expense-group">
           <div className="table-title">This Month's Expenses 💸</div>
-          <Button title="Click Here" className="check-expense-btn" />
+          <Button
+            title="Click Here"
+            className="check-expense-btn"
+            onClick={openPopup}
+          />
+          {isPopupVisible && <Popup onClose={closePopup} />}
         </div>
         <div className="expense-group">
           <div className="table-title">This Years's Expenses 💸</div>
-          <Button title="Click Here" className="check-expense-btn" />
+          <Button
+            title="Click Here"
+            className="check-expense-btn"
+            onClick={openPopup}
+          />
+          {isPopupVisible && <Popup onClose={closePopup} />}
         </div>
       </div>
     </div>
