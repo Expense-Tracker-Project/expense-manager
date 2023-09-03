@@ -56,6 +56,14 @@
     opacity: 1;
 }
 
+.sm-bar-title {
+    font-size: 5.5px !important;
+}
+
+.hide-bar-title {
+    opacity: 0;
+}
+
 .bar-wrapper:hover .bar-label {
     opacity: 1;
 }

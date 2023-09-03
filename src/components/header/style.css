@@ -47,6 +47,17 @@ body {
   gap: 20px;
 }
 
+.add-expense-button:hover {
+  background-color: var(--mid-pink) !important;
+  color: white;
+  -webkit-transition: background-color 1000ms ease-in;
+  -ms-transition: background-color 1000ms ease-in;
+  transition: background-color 1000ms ease-in;
+  -webkit-transition: color 500ms ease-in;
+  -ms-transition: color 500ms ease-in;
+  transition: color 500ms ease-in;
+}
+
 .user-button {
   margin-right: 10px;
 }
@@ -97,6 +108,9 @@ body {
     top: 4rem;
     flex-wrap: wrap;
   }
+  .dropdown-content {
+    right: 26px;
+  }
 }
 
 @media screen and (max-width: 490px) {
@@ -109,6 +123,17 @@ body {
   }
   .header-buttons-group {
     gap: 5px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .logo-text {
+    margin-left: 0;
+  }
+  .user-avatar {
+    position: fixed;
+    top: 1rem;
+    right: 0rem;
   }
 }
 
