@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import Button from "../button";
-
-import axios from "axios";
+import AddExpenseService from "../../service/addExpense";
 
 const ExpenditureForm = ({ onClose,email }) => {
   const [amount, setAmount] = useState("");
@@ -27,33 +26,7 @@ const ExpenditureForm = ({ onClose,email }) => {
     if(amount.trim() === "" || date.trim() === "" || reason.trim() === "" ) {
       alert("Incomplete form");
     } else {
-      try {
-        const userEmail = email;
-        onClose();
-        const expenseData = {
-            email: userEmail,
-            date,
-            reason,
-            amount: parseFloat(amount),
-        };
-    
-        const response = await axios.post("http://localhost:8000/api/submit-expense", expenseData, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-    
-        if (response.status === 200) {
-            alert("Expense saved successfully");
-            setAmount("");
-            setDate("");
-            setReason("");
-        } else {
-            alert("Error saving expense");
-        }
-    } catch (error) {
-        alert("Error saving expense: " + error.message);
-    }
+      await AddExpenseService(email, date, reason, amount, onClose, setAmount, setDate, setReason);
   }
   };
   

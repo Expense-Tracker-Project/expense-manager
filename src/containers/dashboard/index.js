@@ -6,12 +6,12 @@ import Header from "../../components/header";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { mapTableData } from "../../data/table";
 import mapGraphData from "../../data/graph";
 import Button from "../../components/button";
+import GetExpenseService from "../../service/getExpense";
 
-const Dashboard = ( props ) => {
+const Dashboard = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -22,19 +22,9 @@ const Dashboard = ( props ) => {
         if(location?.state?.id === undefined) {
             navigate("/login");
         } else {
-            // Call the API to get expenses here
-            axios.get(`http://localhost:8000/api/get-expenses/${location.state.id}`)
-                .then((response) => {
-                    if (response.data.expenses) {
-                        setExpenses(mapTableData(response.data.expenses));
-                        setGraphData(mapGraphData(response.data.expenses))
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error fetching expenses:", error);
-                });
+            GetExpenseService(setExpenses, setGraphData, mapTableData, mapGraphData, location);
         }
-    }, [location?.state?.id, navigate]);
+    }, [location, location?.state?.id, navigate]);
 
 return (
     <div className="dashboard-container">
