@@ -10,6 +10,7 @@
 
   .popup{
     height: auto;
+    max-width: 100vw;
   }
 
   .arrow-navigation{

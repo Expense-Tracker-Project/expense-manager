@@ -1,11 +1,7 @@
 import "./style.css";
-import React, { useState } from "react";
+import React from "react";
 
-const Popup = ({ onClose }) => {
-  const clicked = (event) => {
-    const className = event.target.className;
-    alert(className);
-  };
+const Popup = ({ onClose, children, leftArrow, rightArrow }) => {
   return (
     <div className="popup">
       <div className="popup-content">
@@ -13,16 +9,15 @@ const Popup = ({ onClose }) => {
           ❌
         </button>
         <div className="arrow-navigation">
-          <button className="arrow-button-left" onClick={clicked}>
+          <button className="arrow-button-left" onClick={leftArrow}>
             ⬅
           </button>
-          <button className="arrow-button-right" onClick={clicked}>
+          <button className="arrow-button-right" onClick={rightArrow}>
             ➡
           </button>
         </div>
         <div className="popup-body">
-          <h2>Common Popup</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum amet laudantium molestiae asperiores autem provident ut nesciunt, sunt exercitationem ea architecto vero aspernatur accusamus saepe sint magni dolor sit earum!</p>
+          {children}
         </div>
       </div>
     </div>

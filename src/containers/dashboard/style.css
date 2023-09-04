@@ -33,6 +33,7 @@
     width: 100%;
     color:  #B49F35;
     font-size: 24px;
+    font-weight: 600;
   } 
   .first-line {
     white-space: nowrap; 
@@ -44,7 +45,7 @@
   .middle-container-left-div2 h3{
     color: #847219;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 8px;
   }
 
@@ -57,9 +58,10 @@
   .middle-container-left-div3 p{
     color: #584604;
   }
-  .middle-container-left-div3 span{
+  .middle-container-left-div3 span {
     color: #5E1313;
-  }
+    font-weight: 600;
+}
 
 .middle-container-right{
     height: 48vh;
@@ -81,9 +83,8 @@
   transform: rotate(360deg) scale(1.2);
 }
 .table-title {
-    margin-right: 1.5rem;
     font-size: 26px;
-    width: 18rem;
+    width: 17rem;
     color: #5D1313;
 }
 
@@ -190,7 +191,7 @@
 }
 }
 
-@media screen and (max-width: 532px) {
+@media screen and (max-width: 671px) {
     .welcome-text {
       display: none;
     }

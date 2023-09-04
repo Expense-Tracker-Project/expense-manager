@@ -1,6 +1,6 @@
-const mapGraphData = (data = [], date) => {
-    const currentDate = date ?? new Date();
-    const currentYear = currentDate.getFullYear();
+const mapGraphData = (data = [], year) => {
+    const currentDate = new Date();
+    const currentYear = year ?? currentDate.getFullYear();
 
     const filteredData = data.filter(expense => {
         const expenseDate = new Date(expense.date);

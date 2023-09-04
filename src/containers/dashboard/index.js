@@ -13,23 +13,21 @@ import GetExpenseService from "../../service/getExpense";
 import Popup from "../../components/CommonPopUp";
 
 const Dashboard = () => {
+  const currentDate = new Date();
+  const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
+  const [currentMonth, setCurrentMonth] = useState(currentDate.getMonth());
+
   const location = useLocation();
   const navigate = useNavigate();
 
   const [expenses, setExpenses] = useState(mapTableData([]));
   const [graphData, setGraphData] = useState(mapGraphData([]));
 
-  const [isPopupVisible, setPopupVisible] = useState(false);
+  const [isTableVisible, setTableVisible] = useState(false);
+  const [isGraphVisible, setGraphVisible] = useState(false);
 
-  const openPopup = () => {
-    setPopupVisible(true);
-  };
+  const openTable = () => {
 
-  const closePopup = () => {
-    setPopupVisible(false);
-  };
-
-  useEffect(() => {
     if (location?.state?.id === undefined) {
       navigate("/login");
     } else {
@@ -38,10 +36,79 @@ const Dashboard = () => {
         setGraphData,
         mapTableData,
         mapGraphData,
+        currentMonth,
+        currentYear,
         location
       );
     }
-  }, [location, location?.state?.id, navigate]);
+    setTableVisible(true);
+  };
+
+  const closeTable = () => {
+    setTableVisible(false);
+  };
+
+  const openGraph = () => {
+    if (location?.state?.id === undefined) {
+      navigate("/login");
+    } else {
+      GetExpenseService(
+        setExpenses,
+        setGraphData,
+        mapTableData,
+        mapGraphData,
+        currentMonth,
+        currentYear,
+        location
+      );
+    }
+    setGraphVisible(true);
+  };
+
+  const closeGraph = () => {
+    setGraphVisible(false);
+  };
+
+  const handleTableDateLeft = () => {
+    if (currentMonth === 0) {
+      setCurrentMonth(11);
+      setCurrentYear(currentYear - 1);
+    } else {
+      setCurrentMonth(currentMonth - 1);
+    }
+  };
+  
+  const handleTableDateRight = () => {
+    if (currentMonth === 11) {
+      setCurrentMonth(0);
+      setCurrentYear(currentYear + 1);
+    } else {
+      setCurrentMonth(currentMonth + 1);
+    }
+  };
+  
+  const handleGraphDateLeft = () => {
+    setCurrentYear(currentYear - 1);
+  };
+  
+  const handleGraphDateRight = () => {
+    setCurrentYear(currentYear + 1);
+  };
+  
+  useEffect(() => {
+   if (isTableVisible) {
+    openTable();
+   }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentMonth, currentYear]);
+  
+  useEffect(() => {
+    if (isGraphVisible) {
+      openGraph();
+    }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentYear]);
 
   return (
     <div className="dashboard-container">
@@ -83,18 +150,23 @@ const Dashboard = () => {
           <Button
             title="Click Here"
             className="check-expense-btn"
-            onClick={openPopup}
+            onClick={openTable}
           />
-          {isPopupVisible && <Popup onClose={closePopup} />}
+          {isTableVisible 
+          && <Popup onClose={closeTable} leftArrow={handleTableDateLeft} rightArrow={handleTableDateRight}>
+            <Table data={expenses} month={currentMonth} year={currentYear} />
+          </Popup>}
         </div>
         <div className="expense-group">
           <div className="table-title">This Years's Expenses 💸</div>
           <Button
             title="Click Here"
             className="check-expense-btn"
-            onClick={openPopup}
+            onClick={openGraph}
           />
-          {isPopupVisible && <Popup onClose={closePopup} />}
+          {isGraphVisible && <Popup onClose={closeGraph} leftArrow={handleGraphDateLeft} rightArrow={handleGraphDateRight}>
+            <Graph data={graphData} year={currentYear} />
+          </Popup>}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
-export const mapTableData = (data = [], date) => {
-    const currentDate = date ?? new Date();
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth();
+export const mapTableData = (data = [], month, year) => {
+    const currentDate = new Date();
+    const currentYear = year ?? currentDate.getFullYear();
+    const currentMonth = month ?? currentDate.getMonth();
 
     const filteredData = data.filter(expense => {
         const expenseDate = new Date(expense.date);

@@ -7,7 +7,7 @@ const Graph = (props) => {
   return (
     <>
       {allExpensesAreZero ? (
-        <div>Welcome to ExpenseTrackr - <br/>Your Daily Expense Companion</div>
+        <div>No expense added for year {props.year}</div>
       ) : (
         <div className="graph-wrapper">
           {props?.data?.map((item, index) => (
