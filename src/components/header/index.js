@@ -18,10 +18,6 @@ const Header = (props) => {
     setShowDropdown(!showDropdown);
   };
 
-  const handleLogout = () => {
-    // Handle logout functionality here
-  };
-
   const handleFormPopupToggle = () => {
     setShowFormPopup(!showFormPopup); // Toggle the form popup visibility
   };
