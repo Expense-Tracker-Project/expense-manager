@@ -26,11 +26,11 @@ const Dashboard = () => {
   const [isTableVisible, setTableVisible] = useState(false);
   const [isGraphVisible, setGraphVisible] = useState(false);
 
-  const openTable = () => {
+  if (location?.state?.id === undefined) {
+    navigate("/login");
+  }
 
-    if (location?.state?.id === undefined) {
-      navigate("/login");
-    } else {
+  const openTable = () => {
       GetExpenseService(
         setExpenses,
         setGraphData,
@@ -40,7 +40,6 @@ const Dashboard = () => {
         currentYear,
         location
       );
-    }
     setTableVisible(true);
   };
 
